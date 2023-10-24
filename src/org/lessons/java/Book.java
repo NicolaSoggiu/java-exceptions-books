@@ -22,18 +22,18 @@ public class Book {
 
     // VALIDAZIONI
     public void validateTitle() {
-        if (title == null) {
+        if (title == null || title.isBlank()) {
             throw new IllegalArgumentException("You must enter the title!");
         }
     }
 
     public void validateAuthor() {
-        if (author == null) {
+        if (author == null || author.isBlank()) {
             throw new IllegalArgumentException("You must enter the author!");
         }
     }
     public void validatePublisher() {
-        if (publisher == null) {
+        if (publisher == null || publisher.isBlank()) {
             throw new IllegalArgumentException("You must enter the publisher!");
         }
     }

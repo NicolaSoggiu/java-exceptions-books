@@ -24,7 +24,7 @@ public class Main {
                 System.out.println(book1);
                 catalogue[count] = book1;
                 count++;
-            } catch (Exception e) {
+            } catch (IllegalArgumentException e) {
                 System.out.println("Error: " + e.getMessage());
             }
 
