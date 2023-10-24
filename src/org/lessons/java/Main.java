@@ -10,20 +10,23 @@ public class Main {
         int count = 0;
 
         while (true) {
-            System.out.print("Enter the book's title: ");
-            String title = scan.nextLine();
-            System.out.print("Enter the book's author: ");
-            String author = scan.nextLine();
-            System.out.print("Enter the book's publisher: ");
-            String publisher = scan.nextLine();
-            System.out.print("Enter the number of pages: ");
-            int pageNumber = scan.nextInt();
-            scan.nextLine();
-
-            Book book1 = new Book(title, author, publisher, pageNumber);
-            System.out.println(book1);
-            catalogue[count] = book1;
-            count++;
+            try {
+                System.out.print("Enter the book's title: ");
+                String title = scan.nextLine();
+                System.out.print("Enter the book's author: ");
+                String author = scan.nextLine();
+                System.out.print("Enter the book's publisher: ");
+                String publisher = scan.nextLine();
+                System.out.print("Enter the number of pages: ");
+                int pageNumber = scan.nextInt();
+                scan.nextLine();
+                Book book1 = new Book(title, author, publisher, pageNumber);
+                System.out.println(book1);
+                catalogue[count] = book1;
+                count++;
+            } catch (Exception e) {
+                System.out.println("Error: " + e.getMessage());
+            }
 
             System.out.print("Do you want to enter another book? (yes/no): ");
             String response = scan.nextLine();
