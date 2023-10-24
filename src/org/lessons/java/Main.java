@@ -1,5 +1,9 @@
 package org.lessons.java;
 
+import javax.imageio.IIOException;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -20,9 +24,9 @@ public class Main {
                 System.out.print("Enter the number of pages: ");
                 int pageNumber = scan.nextInt();
                 scan.nextLine();
-                Book book1 = new Book(title, author, publisher, pageNumber);
-                System.out.println(book1);
-                catalogue[count] = book1;
+                Book book = new Book(title, author, publisher, pageNumber);
+                System.out.println(book);
+                catalogue[count] = book;
                 count++;
             } catch (IllegalArgumentException e) {
                 System.out.println("Error: " + e.getMessage());
@@ -39,6 +43,27 @@ public class Main {
         for (int i = 0; i < count; i++) {
             System.out.println(catalogue[i].getTitle());
         }
+
+        try {
+            File bookFile = new File("src/org/lessons/java/catalogue.txt");
+            if (bookFile.createNewFile()) {
+                System.out.println("File created!");
+                FileWriter writer = new FileWriter(bookFile);
+                for (int i = 0; i < count; i++) {
+                    writer.write("Book " + (i + 1) + ":\n");
+                    writer.write("Title: " + catalogue[i].getTitle() + "\n");
+                    writer.write("Author: " + catalogue[i].getAuthor() + "\n");
+                    writer.write("Publisher: " + catalogue[i].getPublisher() + "\n");
+                    writer.write("Page Number: " + catalogue[i].getPageNumber() + "\n\n");
+                }
+                writer.close();
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("Something went wrong: " + e.getMessage());
+        }
+
 
         scan.close();
     }
