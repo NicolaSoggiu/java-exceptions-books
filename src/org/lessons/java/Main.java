@@ -45,7 +45,7 @@ public class Main {
         }
 
         try {
-            File bookFile = new File("src/org/lessons/java/catalogue.txt");
+            File bookFile = new File("resources/catalogue.txt");
             if (bookFile.createNewFile()) {
                 System.out.println("File created!");
                 FileWriter writer = new FileWriter(bookFile);
@@ -63,7 +63,6 @@ public class Main {
         } catch (IOException e) {
             System.out.println("Something went wrong: " + e.getMessage());
         }
-
 
         scan.close();
     }

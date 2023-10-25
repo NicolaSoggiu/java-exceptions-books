@@ -1,18 +1,18 @@
 Book 1:
-Title: Harry Potter e la camera dei segreti
+Title: Harry Potter
 Author: J.K. Rowling
-Publisher: Salani editore
-Page Number: 500
+Publisher: Mondadori
+Page Number: 600
 
 Book 2:
 Title: Eragon
 Author: Christopher Paolini
 Publisher: Rizzoli
-Page Number: 700
+Page Number: 900
 
 Book 3:
 Title: Hunger Games
 Author: Suzanne Collins
 Publisher: Mondadori
-Page Number: 450
+Page Number: 350
 
